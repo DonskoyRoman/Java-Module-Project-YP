@@ -10,11 +10,16 @@ public class Main {
         System.out.println("На скольких человек разделить счет?");
         int persons;
         while (true) {
-            persons = scanner.nextInt();
-            if (persons > 1) {
-                break;
-            } else {
-                System.out.println("Ошибка! Количество человек должно быть больше одного.");
+            if (scanner.hasNextInt()) {
+                persons = scanner.nextInt();
+                if (persons > 1) {
+                    break;
+                } else {
+                    System.out.println("Ошибка! Количество человек должно быть больше одного.");
+                }
+            }else {
+                System.out.println("Ошибка! Введите целое число для количества человек.");
+                scanner.next();
             }
         }
         scanner.nextLine();
